@@ -11,7 +11,6 @@ namespace NeonBikeBundle
         {
             this.transform.Rotate( Vector3.right, _spinSpeed * Time.deltaTime );
 
-            Debug.Log(Time.deltaTime / 10);
         }
 
         
