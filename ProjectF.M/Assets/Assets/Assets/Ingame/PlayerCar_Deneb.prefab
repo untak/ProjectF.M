@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 8973630779097675543}
   - component: {fileID: 2828621175598549580}
   - component: {fileID: 8374048215521578354}
+  - component: {fileID: 1793850591200744528}
   m_Layer: 0
   m_Name: RearLeftWheel
   m_TagString: Untagged
@@ -224,6 +225,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1793850591200744528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410258269093623843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cfa646bafe58e4c9f7205b3115198d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spinSpeed: 200
 --- !u!1 &2318147085968771916
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +320,7 @@ GameObject:
   - component: {fileID: 1022856723120038003}
   - component: {fileID: 2182579301165326606}
   - component: {fileID: 167369912188537871}
+  - component: {fileID: 5486627921837181723}
   m_Layer: 0
   m_Name: RearRightWheel
   m_TagString: Untagged
@@ -378,6 +393,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5486627921837181723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2388041383330046446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cfa646bafe58e4c9f7205b3115198d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spinSpeed: 200
 --- !u!1 &2603677881390453756
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,9 +558,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7028174514945308711}
   - component: {fileID: 839400302444605103}
+  - component: {fileID: 6792543240043348036}
+  - component: {fileID: 4817826512564106058}
   m_Layer: 0
   m_Name: PlayerCar_Deneb
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -552,7 +582,7 @@ Transform:
   - {fileID: 6948392650077748077}
   - {fileID: 5074038871724920769}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &839400302444605103
 Rigidbody:
@@ -581,6 +611,42 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6792543240043348036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283189942591390256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63185ea25fe43b42aee75128873a196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 10
+  laneChangeSpeed: 5
+  gradualLaneChangeSpeed: 5
+--- !u!65 &4817826512564106058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283189942591390256}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.68, y: 0.68, z: 3.77}
+  m_Center: {x: 0, y: 0.69, z: -0.0033016205}
 --- !u!1 &6099723402432103374
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +658,7 @@ GameObject:
   - component: {fileID: 2751938553651856563}
   - component: {fileID: 7456787151975181555}
   - component: {fileID: 8358837211635286019}
+  - component: {fileID: 6235112690802113221}
   m_Layer: 0
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -664,6 +731,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6235112690802113221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099723402432103374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cfa646bafe58e4c9f7205b3115198d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spinSpeed: 200
 --- !u!1 &6780913997157316538
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +755,7 @@ GameObject:
   - component: {fileID: 6473592978771251485}
   - component: {fileID: 6832567630397581109}
   - component: {fileID: 5401266342223118009}
+  - component: {fileID: 5546339262649546263}
   m_Layer: 0
   m_Name: FrontRightWheel
   m_TagString: Untagged
@@ -747,6 +828,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5546339262649546263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780913997157316538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cfa646bafe58e4c9f7205b3115198d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spinSpeed: 200
 --- !u!1 &7823669154647316024
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +885,6 @@ GameObject:
   - component: {fileID: 6948392650077748077}
   - component: {fileID: 1859044619898175505}
   - component: {fileID: 154362143535201645}
-  - component: {fileID: 4163213054097002718}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -865,24 +958,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4163213054097002718
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7935016755798008154}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.68, y: 0.68, z: 3.77}
-  m_Center: {x: 0, y: 0.69, z: -0.0033016205}
