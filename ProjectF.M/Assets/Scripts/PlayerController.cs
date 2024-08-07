@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float forwardSpeed = 10f;
     public float laneChangeSpeed = 5f;
-    public float gradualLaneChangeSpeed = 5f;
+    public float gradualLaneChangeSpeed = 20f;
     private float[] lanePositions = { -25f, -15f, -5f, 5f, 15f, 25f };
     private int currentLane = 2; 
     private int futureLane = 2; 
