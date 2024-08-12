@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Truck : MonoBehaviour
+public class Sedan : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 20f;
     public float destroyDistance = 50f; // 플레이어와의 거리 임계값
     private AdditionalScoreArea additionalScoreArea;
     private Transform playerTransform;
@@ -16,8 +16,6 @@ public class Truck : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        // 트럭의 앞면을 플레이어의 진행 방향으로 설정하고 180도 회전
-        transform.rotation = Quaternion.Euler(0, 180, 0);
         scoreManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreManager>();
         additionalScoreArea = GetComponentInChildren<AdditionalScoreArea>();
     }
