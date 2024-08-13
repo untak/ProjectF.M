@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MetaMonkeys_ScifiPolygons v0.2
+  m_Shader: {fileID: 4800000, guid: 18476ce8ea676184bb3c8a3c50b0ba48, type: 3}
+  m_ShaderKeywords: VIGNETTE_MASKED _GLOSSYREFLECTIONS_OFF _SCROLLINGDIR_KEY0 _SCROLLINGDIR_Y
+    _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2999
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _dissolvetexture:
+        m_Texture: {fileID: 2800000, guid: 479ebba02d3867341b2ab72448f17e5f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - __dirty: 0
+    - _dissolveedgeintensity: 1.5
+    - _dissolveedgewidth: 0.166
+    - _flicker: 0.223
+    - _flickerspeed: 2
+    - _fresnelscale: 3.35
+    - _scrollingdir: 1
+    - _scrollingemissionHz: 0.33
+    - _scrollingemissionpow: 12.62
+    - _scrollingemissionvelocity: -0.58
+    - _scrollingwavedir: 0
+    m_Colors:
+    - _maincolor: {r: 0.09558986, g: 2.2258782, b: 2.6082377, a: 0}
