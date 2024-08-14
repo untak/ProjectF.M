@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    public float boosterSpeedMultiplier = 2f; // 부스터 효과로 증가할 속도 배율
-    public float boosterDuration = 5f; // 부스터 지속 시간
-    private bool isShieldActive = false; // 실드가 활성화되었는지 여부
+    private PlayerController playerController;
 
-    private void OnCollisionEnter(Collision collision)
+    public GameObject boosterItem; // 부스터 아이템
+    public GameObject shieldItem;  // 실드 아이템
+
+    public float boosterDuration = 5f; // 부스터 지속 시간
+    public float shieldDuration = 30f; // 실드 지속 시간
+
+    void Start()
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            HandleObstacleCollision(collision.gameObject);
-        }
+        playerController = GetComponent<PlayerController>();
+
+        // 처음에는 비활성화 상태로 설정
+        boosterItem.SetActive(false);
+        shieldItem.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,55 +33,27 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    void HandleObstacleCollision(GameObject obstacle)
-    {
-        if (isShieldActive)
-        {
-            Debug.Log("Player hit an obstacle, but shield is active: " + obstacle.name);
-            return; // 실드가 활성화된 경우, 충돌 무효화
-        }
-
-        Debug.Log("Player hit an obstacle: " + obstacle.name);
-        // 예: 플레이어의 체력을 감소시키거나, 게임 오버 처리 등
-    }
-
     void HandleBoosterCollision(GameObject booster)
     {
-        Debug.Log("Player collected a booster: " + booster.name);
-        StartCoroutine(ActivateBooster());
-        Destroy(booster);
+        boosterItem.SetActive(true); // 부스터 아이템 활성화
+        playerController.ActivateBooster(); // 플레이어에게 부스터 효과 적용
+        Destroy(booster); // 충돌한 부스터 아이템 제거
+
+        StartCoroutine(DeactivateItemAfterTime(boosterItem, boosterDuration)); // 5초 후 부스터 비활성화
     }
 
     void HandleShieldCollision(GameObject shield)
     {
-        Debug.Log("Player collected a shield: " + shield.name);
-        ActivateShield();
-        Destroy(shield);
+        shieldItem.SetActive(true); // 실드 아이템 활성화
+        // 실드 관련 로직 추가 (예: 플레이어가 일정 시간 동안 무적이 되는 등)
+        Destroy(shield); // 충돌한 실드 아이템 제거
+
+        StartCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration)); // 30초 후 실드 비활성화
     }
 
-    IEnumerator ActivateBooster()
+    IEnumerator DeactivateItemAfterTime(GameObject item, float delay)
     {
-        // 플레이어의 원래 속도 백업
-        float originalSpeed = /* 플레이어의 원래 속도 */40f;
-
-        // 플레이어 속도 증가 처리
-        yield return new WaitForSeconds(boosterDuration);
-
-        // 부스터 효과 종료 후 속도 원복 처리
-    }
-
-    void ActivateShield()
-    {
-        isShieldActive = true;
-        // 실드 효과 활성화 처리
-
-        // 일정 시간 후 실드 비활성화
-        Invoke("DeactivateShield", 5f); // 실드는 5초 지속
-    }
-
-    void DeactivateShield()
-    {
-        isShieldActive = false;
-        // 실드 비활성화 처리
+        yield return new WaitForSeconds(delay);
+        item.SetActive(false); // 지정된 시간이 지난 후 아이템 비활성화
     }
 }
