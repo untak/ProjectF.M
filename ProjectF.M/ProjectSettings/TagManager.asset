@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GameManager
   - Obstacle
+  - Shield
+  - Booster
   layers:
   - Default
   - TransparentFX
