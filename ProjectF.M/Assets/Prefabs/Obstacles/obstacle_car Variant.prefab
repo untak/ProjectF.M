@@ -150,6 +150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_car Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1430b50ac017b5748ad9af27872fa002,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
