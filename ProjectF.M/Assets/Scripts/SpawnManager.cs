@@ -56,18 +56,18 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             int chosenLane = Random.Range(0, itemLanePositions.Length);
-            Vector3 spawnPosition = new Vector3(itemLanePositions[chosenLane], 2f, playerTransform.position.z + 100);
+            Vector3 spawnPosition = new Vector3(itemLanePositions[chosenLane], 1.5f, playerTransform.position.z + 100);
 
             float itemRoll = Random.value;
             if (itemRoll < 0.5f)
             {
                 // 부스터 아이템 생성
-                Instantiate(boosterPrefab, spawnPosition, Quaternion.identity);
+                Instantiate(boosterPrefab, spawnPosition, Quaternion.Euler(0, 180, 0));
             }
             else
             {
                 // 실드 아이템 생성
-                Instantiate(shieldPrefab, spawnPosition, Quaternion.identity);
+                Instantiate(shieldPrefab, spawnPosition, Quaternion.Euler(270, 0, 0));
             }
 
             yield return new WaitForSeconds(itemSpawnInterval);
