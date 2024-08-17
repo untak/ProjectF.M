@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03439641, g: 0.008403498, b: 0.05275141, a: 1}
+  m_IndirectSpecularColor: {r: 0.03442634, g: 0.008382068, b: 0.052796524, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1559,7 +1559,10 @@ MonoBehaviour:
     type: 3}
   sedanPrefab: {fileID: 6576702454123595499, guid: 54c530c0c104ee34aba62409bc0e02b6,
     type: 3}
+  boosterPrefab: {fileID: 0}
+  shieldPrefab: {fileID: 0}
   spawnInterval: 1
+  itemSpawnInterval: 60
   truckSpeed: 20
 --- !u!4 &1687496560
 Transform:
