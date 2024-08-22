@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private float epsilon = 0.1f; // 오차 허용 범위
     private Coroutine boosterCoroutine;
 
+    private bool GameStarted = false;
+
     void Start()
     {
         transform.position = new Vector3(lanePositions[currentLane], transform.position.y, -90);
@@ -26,23 +28,63 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
-
-        LaneFind();
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (GameStarted)
         {
-            futureLane = currentLane - 1;
-            lastInputDirection = 1;
-            isInput = true;
+            // 차를 앞으로 움직임
+            transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
+
+            // 레인 찾기
+            LaneFind();
+
+            // PC 환경에서는 방향키로 입력을 처리
+            if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.LinuxPlayer || Application.isEditor)
+            {
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    futureLane = currentLane - 1;
+                    lastInputDirection = 1;
+                    isInput = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    futureLane = currentLane + 1;
+                    lastInputDirection = -1;
+                    isInput = true;
+                }
+            }
+            // 모바일 환경에서는 터치 입력으로 처리
+            else if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+
+                    if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Stationary)
+                    {
+                        if (touch.position.x < Screen.width / 2)
+                        {
+                            futureLane = currentLane - 1;
+                            lastInputDirection = 1;
+                            isInput = true;
+                        }
+                        else if (touch.position.x > Screen.width / 2)
+                        {
+                            futureLane = currentLane + 1;
+                            lastInputDirection = -1;
+                            isInput = true;
+                        }
+                    }
+                }
+            }
+
+            // 차 이동 처리
+            Car_Move();
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            futureLane = currentLane + 1;
-            lastInputDirection = -1;
-            isInput = true;
-        }
-        Car_Move();
+        
+    }
+    public void GameStart()
+    {
+        GameStarted = true;
     }
 
     private void LaneFind()
@@ -103,5 +145,4 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(boosterDuration);
         forwardSpeed /= boosterSpeedMultiplier;
     }
-
 }

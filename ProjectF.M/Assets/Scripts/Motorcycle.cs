@@ -45,4 +45,11 @@ public class Motorcycle : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
