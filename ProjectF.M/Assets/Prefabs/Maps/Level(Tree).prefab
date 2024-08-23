@@ -30,11 +30,11 @@ Transform:
   m_Children:
   - {fileID: 1573407430828326488}
   - {fileID: 5707415645748030841}
-  - {fileID: 4399234107593805278}
+  - {fileID: 2477994754124858947}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1485437572100020857
+--- !u!1001 &861303117810487780
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 2995014178250626983, guid: 23a6b73af552fbe4c9b45a616cc0feac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2995014178250626983, guid: 23a6b73af552fbe4c9b45a616cc0feac,
         type: 3}
@@ -97,22 +97,99 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4963223408157238054, guid: 23a6b73af552fbe4c9b45a616cc0feac,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6861403235442037104, guid: 23a6b73af552fbe4c9b45a616cc0feac,
         type: 3}
       propertyPath: m_Name
       value: Guardrail
       objectReference: {fileID: 0}
+    - target: {fileID: 6861403235442037104, guid: 23a6b73af552fbe4c9b45a616cc0feac,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893193781386260690, guid: 23a6b73af552fbe4c9b45a616cc0feac,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4963223408157238054, guid: 23a6b73af552fbe4c9b45a616cc0feac,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7322680319446218475}
+    - targetCorrespondingSourceObject: {fileID: 6893193781386260690, guid: 23a6b73af552fbe4c9b45a616cc0feac,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 520431036525642414}
   m_SourcePrefab: {fileID: 100100000, guid: 23a6b73af552fbe4c9b45a616cc0feac, type: 3}
---- !u!4 &4399234107593805278 stripped
+--- !u!4 &2477994754124858947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2995014178250626983, guid: 23a6b73af552fbe4c9b45a616cc0feac,
     type: 3}
-  m_PrefabInstance: {fileID: 1485437572100020857}
+  m_PrefabInstance: {fileID: 861303117810487780}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5697933120563212994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4963223408157238054, guid: 23a6b73af552fbe4c9b45a616cc0feac,
+    type: 3}
+  m_PrefabInstance: {fileID: 861303117810487780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7322680319446218475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697933120563212994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 200}
+  m_Center: {x: 0, y: 1, z: 27}
+--- !u!1 &6078308806498083126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6893193781386260690, guid: 23a6b73af552fbe4c9b45a616cc0feac,
+    type: 3}
+  m_PrefabInstance: {fileID: 861303117810487780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &520431036525642414
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078308806498083126}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 200}
+  m_Center: {x: 0, y: 1, z: 27}
 --- !u!1001 &5241742701668076178
 PrefabInstance:
   m_ObjectHideFlags: 0

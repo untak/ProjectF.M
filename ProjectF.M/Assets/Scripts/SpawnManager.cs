@@ -13,11 +13,16 @@ public class SpawnManager : MonoBehaviour
     public float spawnInterval = 1f; // 장애물 생성 간격
     public float itemSpawnInterval = 60f; // 아이템 생성 간격
     public float truckSpeed = 20f; // 트럭 이동 속도
+    public float sedanSpeed = 10f; // 승용차 이동 속도
+    public float motorcycleSpeed = 40f; // 오토바이 이동 속도
 
     private float[] lanePositions = { -15f, -5f, 5f, 15f };
     private float[] itemLanePositions = { -10f, 0f, 10f }; // 아이템 차선 위치
     private HashSet<Vector3> occupiedPositions = new HashSet<Vector3>(); // 장애물이 점유한 위치
     private Transform playerTransform;
+
+    private float minSpawnDistance = 300f; // 장애물 최소 스폰 거리
+    private float maxSpawnDistance = 500f; // 장애물 최대 스폰 거리
 
     void Start()
     {
@@ -56,7 +61,7 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             int chosenLane = Random.Range(0, itemLanePositions.Length);
-            Vector3 spawnPosition = new Vector3(itemLanePositions[chosenLane], 1.5f, playerTransform.position.z + 100);
+            Vector3 spawnPosition = new Vector3(itemLanePositions[chosenLane], 1.5f, playerTransform.position.z + Random.Range(minSpawnDistance, maxSpawnDistance));
 
             float itemRoll = Random.value;
             if (itemRoll < 0.5f)
@@ -76,10 +81,10 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnSign()
     {
-        int chosenLane = ChooseAvailableLane();
+        int chosenLane = ChooseSafeLane(0); // 표지판은 속도가 0이므로 속도를 고려하지 않음
         if (chosenLane != -1)
         {
-            Vector3 spawnPosition = new Vector3(lanePositions[chosenLane], 0.1f, playerTransform.position.z + 200);
+            Vector3 spawnPosition = new Vector3(lanePositions[chosenLane], 0.1f, playerTransform.position.z + Random.Range(minSpawnDistance, maxSpawnDistance));
             if (!IsPositionOccupied(spawnPosition))
             {
                 Instantiate(signPrefab, spawnPosition, Quaternion.identity);
@@ -90,13 +95,14 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnVehicle()
     {
-        int chosenLane = ChooseAvailableLane();
+        float vehicleSpeed = Random.value < 0.5f ? sedanSpeed : truckSpeed;
+        int chosenLane = ChooseSafeLane(vehicleSpeed);
         if (chosenLane != -1)
         {
-            Vector3 spawnPosition = new Vector3(lanePositions[chosenLane], 1f, playerTransform.position.z + 200);
+            Vector3 spawnPosition = new Vector3(lanePositions[chosenLane], 1f, playerTransform.position.z + Random.Range(minSpawnDistance, maxSpawnDistance));
             if (!IsPositionOccupied(spawnPosition))
             {
-                if (Random.value < 0.5f)
+                if (vehicleSpeed == sedanSpeed)
                 {
                     Instantiate(sedanPrefab, spawnPosition, Quaternion.Euler(0, 180, 0));
                 }
@@ -112,39 +118,40 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnMotorcycle()
     {
-        int chosenLane = ChooseAvailableLane();
+        int chosenLane = ChooseSafeLane(motorcycleSpeed);
         if (chosenLane != -1)
         {
-            List<float> availableOffsets = new List<float> { -2.5f, 0f, 2.5f };
-            Vector3 motorcycleSpawnPosition = Vector3.zero;
-            bool positionFound = false;
-
-            foreach (float offset in availableOffsets)
+            Vector3 spawnPosition = new Vector3(lanePositions[chosenLane], 1f, playerTransform.position.z + Random.Range(minSpawnDistance, maxSpawnDistance));
+            if (!IsPositionOccupied(spawnPosition))
             {
-                Vector3 potentialPosition = new Vector3(lanePositions[chosenLane] + offset, 0.1f, playerTransform.position.z + 200);
-                if (!IsPositionOccupied(potentialPosition))
-                {
-                    motorcycleSpawnPosition = potentialPosition;
-                    positionFound = true;
-                    break;
-                }
-            }
-
-            if (positionFound)
-            {
-                Instantiate(motorcyclePrefab, motorcycleSpawnPosition, Quaternion.Euler(0, 180, 0));
-                occupiedPositions.Add(motorcycleSpawnPosition);
+                Instantiate(motorcyclePrefab, spawnPosition, Quaternion.Euler(0, 180, 0));
+                occupiedPositions.Add(spawnPosition);
             }
         }
     }
 
-    int ChooseAvailableLane()
+    int ChooseSafeLane(float obstacleSpeed)
     {
         List<int> availableLanes = new List<int>();
+        float playerZPosition = playerTransform.position.z;
+
         for (int i = 0; i < lanePositions.Length; i++)
         {
-            Vector3 laneCenterPosition = new Vector3(lanePositions[i], 0.1f, playerTransform.position.z + 100);
-            if (!IsPositionOccupied(laneCenterPosition))
+            bool isSafe = true;
+            foreach (Vector3 occupiedPosition in occupiedPositions)
+            {
+                if (Mathf.Abs(occupiedPosition.x - lanePositions[i]) < 5f)
+                {
+                    float distance = Mathf.Abs(occupiedPosition.z - (playerZPosition + minSpawnDistance));
+                    if (distance < (obstacleSpeed * 0.5f)) // 충돌을 최소화하기 위해 거리 고려
+                    {
+                        isSafe = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isSafe)
             {
                 availableLanes.Add(i);
             }
@@ -158,14 +165,14 @@ public class SpawnManager : MonoBehaviour
         return occupiedPositions.Contains(position);
     }
 
-    IEnumerator UpdateOccupiedLanes()
-    {
-        yield return new WaitForSeconds(spawnInterval * 2);
-        occupiedPositions.Clear();
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Obstacle"))
-        {
-            Vector3 pos = new Vector3(obj.transform.position.x, 0.1f, obj.transform.position.z);
-            occupiedPositions.Add(pos);
-        }
-    }
+    //IEnumerator UpdateOccupiedLanes()
+    //{
+    //    yield return new WaitForSeconds(spawnInterval * 2);
+    //    occupiedPositions.Clear();
+    //    foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Obstacle"))
+    //    {
+    //        Vector3 pos = new Vector3(obj.transform.position.x, 0.1f, obj.transform.position.z);
+    //        occupiedPositions.Add(pos);
+    //    }
+    //}
 }

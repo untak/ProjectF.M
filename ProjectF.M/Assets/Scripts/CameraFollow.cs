@@ -12,8 +12,6 @@ public class CameraFollow : MonoBehaviour
     public float height = 5f;      // 차량 위로의 높이
     public float angle = 30f;      // 카메라 각도
 
-    private bool gameStarted = false;
-
     void Start()
     {
         // 카메라의 초기 위치를 설정합니다.
@@ -23,15 +21,8 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        if(gameStarted == true)
-        {
-            // 카메라의 위치를 플레이어 차량의 위치와 오프셋을 기반으로 설정합니다.
-            transform.position = player.position + offset;
-        }
+        // 카메라의 위치를 플레이어 차량의 위치와 오프셋을 기반으로 설정합니다.
+        transform.position = player.position + offset;
 
-    }
-    public void GameStart()
-    {
-        gameStarted = true;
     }
 }

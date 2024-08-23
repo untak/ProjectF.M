@@ -175,7 +175,7 @@ Transform:
   - {fileID: 1927524274529966110}
   - {fileID: 4224399523141391587}
   - {fileID: 2066394400056398001}
-  - {fileID: 4517553097756489313}
+  - {fileID: 7364720694420686087}
   - {fileID: 8917716409604645143}
   - {fileID: 1330338133108435123}
   - {fileID: 3238459587304059704}
@@ -210,12 +210,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3455778043149718851}
+  - {fileID: 8606466002690827813}
   - {fileID: 8425590608856420965}
   - {fileID: 7376856012510260286}
   - {fileID: 7911036378571549109}
   - {fileID: 6458571179714295470}
-  - {fileID: 3323648838056629272}
+  - {fileID: 8546378447643289456}
   - {fileID: 4695448990263244001}
   m_Father: {fileID: 9137958848582836197}
   m_RootOrder: -1
@@ -326,7 +326,7 @@ Transform:
   - {fileID: 3574689923663772354}
   - {fileID: 2622142926062065715}
   - {fileID: 5596416170808713434}
-  - {fileID: 9060728326182495298}
+  - {fileID: 2682738556161038118}
   - {fileID: 2977081324146041305}
   - {fileID: 8668107664164585609}
   m_Father: {fileID: 7067313540302378995}
@@ -404,7 +404,7 @@ Transform:
   - {fileID: 6195143505369461402}
   - {fileID: 1220066415797127337}
   - {fileID: 5766981599362226619}
-  - {fileID: 3845204115518924244}
+  - {fileID: 7915573521176352436}
   m_Father: {fileID: 7067313540302378995}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -477,7 +477,7 @@ Transform:
   - {fileID: 7067313540302378995}
   - {fileID: 9137958848582836197}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6893193781386260690
 GameObject:
@@ -559,6 +559,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -654,6 +659,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -747,6 +757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -842,6 +857,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -935,6 +955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -1030,6 +1055,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1123,6 +1153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -1218,6 +1253,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1311,6 +1351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -1406,6 +1451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1499,6 +1549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -1594,6 +1649,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1687,6 +1747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -1782,6 +1847,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1875,6 +1945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -1970,6 +2045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2063,6 +2143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -2158,6 +2243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2252,6 +2342,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2345,6 +2440,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -2534,6 +2634,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2627,6 +2732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -2722,6 +2832,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2815,6 +2930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -2910,6 +3030,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3003,6 +3128,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -3098,6 +3228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3173,7 +3308,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50bed473b36eb2a46b451927342b974f, type: 3}
---- !u!4 &3323648838056629272 stripped
+--- !u!4 &8546378447643289456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
     type: 3}
@@ -3191,6 +3326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -3267,7 +3407,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50bed473b36eb2a46b451927342b974f, type: 3}
---- !u!4 &3455778043149718851 stripped
+--- !u!4 &8606466002690827813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
     type: 3}
@@ -3285,6 +3425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -3380,6 +3525,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3473,6 +3623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -3568,6 +3723,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3662,6 +3822,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3737,7 +3902,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50bed473b36eb2a46b451927342b974f, type: 3}
---- !u!4 &3845204115518924244 stripped
+--- !u!4 &7915573521176352436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
     type: 3}
@@ -3755,6 +3920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -3850,6 +4020,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3944,6 +4119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4019,7 +4199,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50bed473b36eb2a46b451927342b974f, type: 3}
---- !u!4 &4517553097756489313 stripped
+--- !u!4 &7364720694420686087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
     type: 3}
@@ -4037,6 +4217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -4132,6 +4317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4225,6 +4415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -4320,6 +4515,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4413,6 +4613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -4508,6 +4713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4601,6 +4811,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -4696,6 +4911,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4789,6 +5009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -4884,6 +5109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4977,6 +5207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -5072,6 +5307,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5165,6 +5405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -5260,6 +5505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5353,6 +5603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -5448,6 +5703,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5541,6 +5801,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -5636,6 +5901,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5729,6 +5999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -5824,6 +6099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5917,6 +6197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -6012,6 +6297,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6105,6 +6395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -6200,6 +6495,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6293,6 +6593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -6388,6 +6693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6481,6 +6791,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -6576,6 +6891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6669,6 +6989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
@@ -6764,6 +7089,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardrail (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6839,7 +7169,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50bed473b36eb2a46b451927342b974f, type: 3}
---- !u!4 &9060728326182495298 stripped
+--- !u!4 &2682738556161038118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
     type: 3}
@@ -6857,6 +7187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guardrail (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039041521416939997, guid: 50bed473b36eb2a46b451927342b974f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6378553825964618599, guid: 50bed473b36eb2a46b451927342b974f,
         type: 3}
