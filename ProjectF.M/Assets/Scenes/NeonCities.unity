@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03439641, g: 0.008403498, b: 0.05275141, a: 1}
+  m_IndirectSpecularColor: {r: 0.03442634, g: 0.008382068, b: 0.052796524, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2032,6 +2032,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807485727}
     m_Modifications:
+    - target: {fileID: 504517625569882610, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 504517625569882610, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.16078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 504517625569882610, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.16078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 504517625569882610, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 740143661794837015, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.16078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 740143661794837015, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.16078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 740143661794837015, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.18039216
+      objectReference: {fileID: 0}
     - target: {fileID: 4264694900510536499, guid: 204dc8315063ca946af7a28db1cd6425,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2041,6 +2076,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119078822259356568, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119078822259356568, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.13333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119078822259356568, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119078822259356568, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973829460202038744, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973829460202038744, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.13333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973829460202038744, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973829460202038744, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     - target: {fileID: 6301967024732186351, guid: 204dc8315063ca946af7a28db1cd6425,
         type: 3}
@@ -2590,17 +2665,17 @@ PrefabInstance:
     - target: {fileID: 9077343438487664410, guid: 20a23a35980fffa488520b590aa16d78,
         type: 3}
       propertyPath: m_Waypoints.Array.data[2].position.x
-      value: -6
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 9077343438487664410, guid: 20a23a35980fffa488520b590aa16d78,
         type: 3}
       propertyPath: m_Waypoints.Array.data[2].position.y
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9077343438487664410, guid: 20a23a35980fffa488520b590aa16d78,
         type: 3}
       propertyPath: m_Waypoints.Array.data[2].position.z
-      value: -105
+      value: -103.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2685,6 +2760,11 @@ PrefabInstance:
       propertyPath: m_Path
       value: 
       objectReference: {fileID: 747610982002789116}
+    - target: {fileID: 3200805083755293406, guid: 60b1a1127101c3b4690f365955b9ff1d,
+        type: 3}
+      propertyPath: m_PathPosition
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8092432045430768925, guid: 60b1a1127101c3b4690f365955b9ff1d,
         type: 3}
       propertyPath: m_LookAt
@@ -2736,22 +2816,22 @@ PrefabInstance:
     - target: {fileID: 7977105126118534509, guid: 356dde6993855a54ea7852bb14f41f22,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.3581967
+      value: -0.3406173
       objectReference: {fileID: 0}
     - target: {fileID: 7977105126118534509, guid: 356dde6993855a54ea7852bb14f41f22,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.03045061
+      value: -0.03357614
       objectReference: {fileID: 0}
     - target: {fileID: 7977105126118534509, guid: 356dde6993855a54ea7852bb14f41f22,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.92979574
+      value: 0.9350703
       objectReference: {fileID: 0}
     - target: {fileID: 7977105126118534509, guid: 356dde6993855a54ea7852bb14f41f22,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07904273
+      value: -0.09217397
       objectReference: {fileID: 0}
     - target: {fileID: 7977105126118534509, guid: 356dde6993855a54ea7852bb14f41f22,
         type: 3}
