@@ -44,4 +44,18 @@ public class Sedan : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            if (other.gameObject.name.Contains("stop"))
+            {
+                speed = 0;
+            }
+            else if (other.gameObject.name.Contains("truck"))
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }

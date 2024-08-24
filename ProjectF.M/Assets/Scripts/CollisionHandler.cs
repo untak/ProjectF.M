@@ -18,12 +18,20 @@ public class CollisionHandler : MonoBehaviour
     private bool boosterOn = false;
     private bool shieldOn = false;
 
+    public AudioClip boosterPickupSound; // 부스터 획득 소리
+    public AudioClip shieldPickupSound; // 실드 획득 소리
+    public AudioClip boosterActiveSound; // 부스터 활성화 사운드
+    public AudioClip shieldActiveSound; // 실드 활성화 사운드
+    public AudioClip obstacleHitSound; // 장애물 충돌 사운드
+
+    private AudioSource audioSource;
+
     void Start()
     {
         playerController = GetComponent<PlayerController>();
         gameOverManager = FindObjectOfType<GameOverManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
-        // 처음에는 비활성화 상태로 설정
+        audioSource = GetComponent<AudioSource>();
         boosterItem.SetActive(false);
         shieldItem.SetActive(false);
     }
@@ -35,20 +43,38 @@ public class CollisionHandler : MonoBehaviour
             if (boosterOn)
             {
                 scoreManager.GetScore(100);
-                Destroy(collision.gameObject); // 부스터 활성화 시 장애물 즉시 제거
+                if (!collision.gameObject.name.Contains("Guardrail"))
+                {
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+                    audioSource.PlayOneShot(obstacleHitSound); // 장애물 충돌 소리 재생
+                    gameOverManager.GameOver();
+                }
+                
             }
             else if (shieldOn)
             {
-                scoreManager.GetScore(100);
-                HandleShieldCollisionWithObstacle(collision.gameObject); // 장애물 날려버리기
-                // 실드가 충돌한 후 즉시 비활성화
-                StopCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration));
-                shieldItem.SetActive(false);
-                shieldOn = false; // 실드 비활성화 상태 업데이트
+                if (!collision.gameObject.name.Contains("Guardrail"))
+                {
+                    scoreManager.GetScore(100);
+                    HandleShieldCollisionWithObstacle(collision.gameObject);
+                    StopCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration));
+                    shieldItem.SetActive(false);
+                    shieldOn = false;
+                    audioSource.Stop();
+                }
+                else
+                {
+                    audioSource.PlayOneShot(obstacleHitSound); // 장애물 충돌 소리 재생
+                    gameOverManager.GameOver();
+                }
+                
             }
             else
             {
-                // 장애물과 충돌 시 게임 오버
+                audioSource.PlayOneShot(obstacleHitSound); // 장애물 충돌 소리 재생
                 gameOverManager.GameOver();
             }
         }
@@ -64,62 +90,79 @@ public class CollisionHandler : MonoBehaviour
         {
             HandleShieldCollision(other.gameObject);
         }
+        else if (other.CompareTag("Line"))
+        {
+            gameOverManager.GameOver();
+        }
     }
 
     void HandleBoosterCollision(GameObject booster)
     {
+        audioSource.PlayOneShot(boosterPickupSound); // 부스터 획득 소리 재생
         boosterOn = true;
-        boosterItem.SetActive(true); // 부스터 아이템 활성화
-        playerController.ActivateBooster(); // 플레이어에게 부스터 효과 적용
-        Destroy(booster); // 충돌한 부스터 아이템 제거
+        boosterItem.SetActive(true);
+        playerController.ActivateBooster();
+        Destroy(booster);
 
-        StartCoroutine(DeactivateItemAfterTime(boosterItem, boosterDuration)); // 5초 후 부스터 비활성화
+        // 부스터 사운드 재생
+        audioSource.clip = boosterActiveSound;
+        audioSource.loop = true;
+        audioSource.Play();
+
+        StartCoroutine(DeactivateItemAfterTime(boosterItem, boosterDuration));
     }
 
     void HandleShieldCollision(GameObject shield)
     {
+        audioSource.PlayOneShot(shieldPickupSound); // 실드 획득 소리 재생
         shieldOn = true;
-        shieldItem.SetActive(true); // 실드 아이템 활성화
-        Destroy(shield); // 충돌한 실드 아이템 제거
+        shieldItem.SetActive(true);
+        Destroy(shield);
 
-        StartCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration)); // 30초 후 실드 비활성화
+        // 실드 사운드 재생
+        audioSource.clip = shieldActiveSound;
+        audioSource.loop = true;
+        audioSource.Play();
+
+        StartCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration));
     }
 
     void HandleShieldCollisionWithObstacle(GameObject obstacle)
     {
-        // 장애물을 날려버리기 위한 힘을 적용
         Rigidbody obstacleRb = obstacle.GetComponent<Rigidbody>();
         if (obstacleRb != null)
         {
+            BoxCollider obstacleBc = obstacle.GetComponent<BoxCollider>();
+            obstacleBc.enabled = false;
             Vector3 direction = (obstacle.transform.position - transform.position).normalized;
-            float force = 500f; // 날리는 힘의 크기
+            float force = 500f;
             obstacleRb.AddForce(direction * force, ForceMode.Impulse);
         }
 
-        // 일정 시간 뒤 장애물 제거
         StartCoroutine(RemoveObstacleAfterTime(obstacle, obstacleRemoveDelay));
     }
 
     IEnumerator RemoveObstacleAfterTime(GameObject obstacle, float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(obstacle); // 일정 시간 후 장애물 제거
+        Destroy(obstacle);
     }
 
     IEnumerator DeactivateItemAfterTime(GameObject item, float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (item.activeSelf) // 아이템이 아직 활성 상태인 경우에만 비활성화
+        if (item.activeSelf)
         {
-            item.SetActive(false); // 지정된 시간이 지난 후 아이템 비활성화
+            item.SetActive(false);
             if (item == shieldItem)
             {
-                shieldOn = false; // 실드 비활성화 상태 업데이트
+                shieldOn = false;
             }
             else
             {
                 boosterOn = false;
             }
+            audioSource.Stop(); // 아이템 비활성화 시 소리 멈춤
         }
     }
 }

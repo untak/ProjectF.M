@@ -46,4 +46,14 @@ public class Truck : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            if (other.gameObject.name.Contains("stop") || other.gameObject.name.Contains("truck"))
+            {
+                speed = 0;
+            }
+        }
+    }
 }

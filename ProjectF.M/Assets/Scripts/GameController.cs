@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject homeUIPanel; // 홈 UI 패널
-    public PlayerController playerController; // 플레이어 컨트롤러 스크립트 참조
-    public GameObject spawnManager; // 스폰 매니저 스크립트 참조
-    public GameObject cutscene; // 메인 카메라 참조
+    public GameObject homeUIPanel;
+    public PlayerController playerController;
+    public GameObject spawnManager;
+    public GameObject cutscene;
     public GameObject score;
     public CameraFollow cameraFollow;
+
+    public AudioClip[] homeBGMs; // 홈 화면에서 재생할 BGM들
+    public AudioClip gameBGM; // 게임 내에서 재생할 BGM
+
+    private AudioSource audioSource;
+
     void Start()
     {
         playerController.enabled = false;
@@ -16,23 +22,44 @@ public class GameController : MonoBehaviour
         spawnManager.SetActive(false);
         cutscene.SetActive(false);
         score.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
+        StartCoroutine(PlayHomeBGMs());
+    }
+
+    IEnumerator PlayHomeBGMs()
+    {
+        while (true)
+        {
+            foreach (AudioClip bgm in homeBGMs)
+            {
+                audioSource.clip = bgm;
+                audioSource.Play();
+                yield return new WaitForSeconds(bgm.length);
+            }
+        }
     }
 
     public void StartGame()
     {
-        StartCoroutine(StartGameRoutine()); // 코루틴 실행
+        StopCoroutine(PlayHomeBGMs());
+        StartCoroutine(StartGameRoutine());
     }
 
     private IEnumerator StartGameRoutine()
     {
-        homeUIPanel.SetActive(false); // 홈 UI 비활성화
+        homeUIPanel.SetActive(false);
 
-        cutscene.SetActive(true); // 컷신 활성화
-        yield return new WaitForSeconds(1.5f); // 1.5초 대기
+        cutscene.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         cutscene.SetActive(false);
         cameraFollow.enabled = true;
-        playerController.enabled = true; // 플레이어 움직임 활성화
-        spawnManager.SetActive(true); // 스폰 매니저 활성화
-        score.SetActive(true); // 점수 UI 활성화
+        playerController.enabled = true;
+        spawnManager.SetActive(true);
+        score.SetActive(true);
+
+        // 게임 BGM 재생
+        audioSource.clip = gameBGM;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 }
