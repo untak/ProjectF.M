@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.034439843, g: 0.008384505, b: 0.052808877, a: 1}
+  m_IndirectSpecularColor: {r: 0.03439641, g: 0.008403498, b: 0.05275141, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -390,7 +390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &127161975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,6 +838,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3960417022066625760}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &495111419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5189262452909604596, guid: 0104b880bc5076841b4773f8d3e4dcfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 3960417022066625760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &594962586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,8 +1170,8 @@ MonoBehaviour:
     type: 3}
   shieldPrefab: {fileID: 4261576723593101837, guid: fe4a06794e6dee34099eea452ffec025,
     type: 3}
-  spawnInterval: 1
-  itemSpawnInterval: 60
+  spawnInterval: 0.5
+  itemSpawnInterval: 30
   truckSpeed: 20
   sedanSpeed: 10
   motorcycleSpeed: 40
@@ -1623,6 +1629,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCar_Deneb
       objectReference: {fileID: 0}
+    - target: {fileID: 6792543240043348036, guid: 4eaa88d5f85d31341ab381a2773af322,
+        type: 3}
+      propertyPath: forwardSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 7028174514945308711, guid: 4eaa88d5f85d31341ab381a2773af322,
         type: 3}
       propertyPath: m_RootOrder
@@ -1752,6 +1763,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor.r
       value: 0.8745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264694900510536499, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1296327158}
+    - target: {fileID: 4264694900510536499, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
       objectReference: {fileID: 0}
     - target: {fileID: 5119078822259356568, guid: 204dc8315063ca946af7a28db1cd6425,
         type: 3}
@@ -1928,6 +1949,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9139354591472784578, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1296327158}
+    - target: {fileID: 9139354591472784578, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2080,7 +2111,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1296327158
 MonoBehaviour:
@@ -2107,6 +2138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 886797026}
+  HUD: {fileID: 495111419}
   currentScoreText: {fileID: 1633581239}
   highScoreText: {fileID: 2025816693}
 --- !u!114 &1296327160
@@ -2124,14 +2156,18 @@ MonoBehaviour:
   homeUIPanel: {fileID: 7194408364936082661}
   playerController: {fileID: 1269074467}
   spawnManager: {fileID: 636965903}
+  roadManager: {fileID: 127161974}
   cutscene: {fileID: 840566631}
   score: {fileID: 1079643189}
+  HUD: {fileID: 495111419}
   cameraFollow: {fileID: 594962588}
+  highScoreText: {fileID: 1721426632}
   homeBGMs:
   - {fileID: 8300000, guid: 70612f2b75cddc54aa8165f6601ec0b2, type: 3}
+  gameBGMs:
+  - {fileID: 8300000, guid: 9233feb8266ac1749b806973702a0019, type: 3}
   - {fileID: 8300000, guid: 12120b2f486f9314ab4c7362558dd555, type: 3}
   - {fileID: 8300000, guid: 564d659d9ad3b2c4fabb4f15198c2f93, type: 3}
-  gameBGM: {fileID: 8300000, guid: 9233feb8266ac1749b806973702a0019, type: 3}
 --- !u!82 &1296327161
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2379,6 +2415,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1721426632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1344129064144671522, guid: 3e7621d5fa98e64469439856587419ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 7346218265307459073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1935545834 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1841106498068052251, guid: a7a958ba67a9e6c4484d0f6bc4b8300f,
@@ -2463,7 +2511,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &747610982002789116 stripped
 MonoBehaviour:
@@ -2630,6 +2678,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5761234561647957259, guid: 0104b880bc5076841b4773f8d3e4dcfa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7179716623994034695, guid: 0104b880bc5076841b4773f8d3e4dcfa,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2666,7 +2719,7 @@ PrefabInstance:
     - target: {fileID: 7445897449070202097, guid: 20a23a35980fffa488520b590aa16d78,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7445897449070202097, guid: 20a23a35980fffa488520b590aa16d78,
         type: 3}
@@ -2759,7 +2812,7 @@ PrefabInstance:
     - target: {fileID: 3158572402301284991, guid: 60b1a1127101c3b4690f365955b9ff1d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3158572402301284991, guid: 60b1a1127101c3b4690f365955b9ff1d,
         type: 3}
@@ -2852,7 +2905,7 @@ PrefabInstance:
     - target: {fileID: 7977105126118534509, guid: 356dde6993855a54ea7852bb14f41f22,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7977105126118534509, guid: 356dde6993855a54ea7852bb14f41f22,
         type: 3}
@@ -2929,6 +2982,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807485727}
     m_Modifications:
+    - target: {fileID: 922153642244410256, guid: 3e7621d5fa98e64469439856587419ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2995717476590464279, guid: 3e7621d5fa98e64469439856587419ce,
         type: 3}
       propertyPath: gameController

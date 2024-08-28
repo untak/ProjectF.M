@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float forwardSpeed = 10f;
+    public float forwardSpeed = 80f; // 기본 속도
+    public float maxSpeed = 120f; // 최대 속도
     public float laneChangeSpeed = 5f;
     public float gradualLaneChangeSpeed = 20f;
     public float boosterSpeedMultiplier = 2f; // 부스터 속도 배율
     public float boosterDuration = 5f; // 부스터 지속 시간
+    public float speedIncreaseDuration = 60f; // 속도 증가 지속 시간 (1분)
 
     private float[] lanePositions = { -25f, -15f, -5f, 5f, 15f, 25f };
     private int currentLane = 2;
@@ -17,17 +19,37 @@ public class PlayerController : MonoBehaviour
     private bool isMove = false;
     private bool isInput = false;
     private float epsilon = 0.1f; // 오차 허용 범위
+    private bool isbooster = false;
     private Coroutine boosterCoroutine;
 
     private bool GameStarted = false;
+    private float startTime;
 
     void Start()
     {
         transform.position = new Vector3(lanePositions[currentLane], transform.position.y, -90);
+        startTime = Time.time;
     }
 
     void Update()
     {
+            // 게임이 시작된 후 경과된 시간 계산
+            float elapsedTime = Time.time - startTime;
+
+        if (!isbooster)
+        {
+            // 경과 시간에 따라 속도 증가
+            if (elapsedTime <= speedIncreaseDuration)
+            {
+                // 선형적으로 속도 증가
+                forwardSpeed = Mathf.Lerp(80f, maxSpeed, elapsedTime / speedIncreaseDuration);
+            }
+            else
+            {
+                // 1분 이후 속도 고정
+                forwardSpeed = maxSpeed;
+            }
+        }
         // 차를 앞으로 움직임
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 
@@ -77,16 +99,13 @@ public class PlayerController : MonoBehaviour
 
         // 차 이동 처리
         Car_Move();
-        //if (GameStarted)
-        //{
-
-        //}
-
     }
-    public void GameStart()
-    {
-        GameStarted = true;
-    }
+
+    //public void GameStart()
+    //{
+    //    GameStarted = true;
+    //    startTime = Time.time; // 게임 시작 시간 저장
+    //}
 
     private void LaneFind()
     {
@@ -142,8 +161,10 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator BoosterRoutine()
     {
+        isbooster = true;
         forwardSpeed *= boosterSpeedMultiplier;
         yield return new WaitForSeconds(boosterDuration);
         forwardSpeed /= boosterSpeedMultiplier;
+        isbooster = false;
     }
 }
