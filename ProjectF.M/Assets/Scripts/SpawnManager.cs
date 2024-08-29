@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public GameObject[] truckPrefabs; // 트럭 프리팹 배열
+    public GameObject[] motorcyclePrefabs; // 오토바이 프리팹 배열
+    public GameObject[] sedanPrefabs; // 승용차 프리팹 배열
     public GameObject signPrefab; // 표지판 프리팹
-    public GameObject truckPrefab; // 트럭 프리팹
-    public GameObject motorcyclePrefab; // 오토바이 프리팹
-    public GameObject sedanPrefab; // 승용차 프리팹
     public GameObject boosterPrefab; // 부스터 아이템 프리팹
     public GameObject shieldPrefab; // 실드 아이템 프리팹
     public float spawnInterval = 1f; // 장애물 생성 간격
@@ -66,12 +66,10 @@ public class SpawnManager : MonoBehaviour
             float itemRoll = Random.value;
             if (itemRoll < 0.5f)
             {
-                // 부스터 아이템 생성
                 Instantiate(boosterPrefab, spawnPosition, Quaternion.Euler(0, 180, 0));
             }
             else
             {
-                // 실드 아이템 생성
                 Instantiate(shieldPrefab, spawnPosition, Quaternion.Euler(270, 0, 0));
             }
 
@@ -81,7 +79,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnSign()
     {
-        int chosenLane = ChooseSafeLane(0); // 표지판은 속도가 0이므로 속도를 고려하지 않음
+        int chosenLane = ChooseSafeLane(0);
         if (chosenLane != -1)
         {
             Vector3 spawnPosition = new Vector3(lanePositions[chosenLane], 0.1f, playerTransform.position.z + Random.Range(minSpawnDistance, maxSpawnDistance));
@@ -104,11 +102,13 @@ public class SpawnManager : MonoBehaviour
             {
                 if (vehicleSpeed == sedanSpeed)
                 {
-                    Instantiate(sedanPrefab, spawnPosition, Quaternion.Euler(0, 180, 0));
+                    int sedanIndex = Random.Range(0, sedanPrefabs.Length); // 50% 확률로 두 프리팹 중 하나 선택
+                    Instantiate(sedanPrefabs[sedanIndex], spawnPosition, Quaternion.Euler(0, 180, 0));
                 }
                 else
                 {
-                    GameObject truck = Instantiate(truckPrefab, spawnPosition, Quaternion.Euler(0, 180, 0));
+                    int truckIndex = Random.Range(0, truckPrefabs.Length); // 50% 확률로 두 프리팹 중 하나 선택
+                    GameObject truck = Instantiate(truckPrefabs[truckIndex], spawnPosition, Quaternion.Euler(0, 180, 0));
                     truck.GetComponent<Truck>().speed = truckSpeed;
                 }
                 occupiedPositions.Add(spawnPosition);
@@ -124,7 +124,8 @@ public class SpawnManager : MonoBehaviour
             Vector3 spawnPosition = new Vector3(lanePositions[chosenLane], 1f, playerTransform.position.z + Random.Range(minSpawnDistance, maxSpawnDistance));
             if (!IsPositionOccupied(spawnPosition))
             {
-                Instantiate(motorcyclePrefab, spawnPosition, Quaternion.Euler(0, 180, 0));
+                int motorcycleIndex = Random.Range(0, motorcyclePrefabs.Length); // 50% 확률로 두 프리팹 중 하나 선택
+                Instantiate(motorcyclePrefabs[motorcycleIndex], spawnPosition, Quaternion.Euler(0, 180, 0));
                 occupiedPositions.Add(spawnPosition);
             }
         }
@@ -143,7 +144,7 @@ public class SpawnManager : MonoBehaviour
                 if (Mathf.Abs(occupiedPosition.x - lanePositions[i]) < 5f)
                 {
                     float distance = Mathf.Abs(occupiedPosition.z - (playerZPosition + minSpawnDistance));
-                    if (distance < (obstacleSpeed * 0.5f)) // 충돌을 최소화하기 위해 거리 고려
+                    if (distance < (obstacleSpeed * 0.5f))
                     {
                         isSafe = false;
                         break;
@@ -164,15 +165,4 @@ public class SpawnManager : MonoBehaviour
     {
         return occupiedPositions.Contains(position);
     }
-
-    //IEnumerator UpdateOccupiedLanes()
-    //{
-    //    yield return new WaitForSeconds(spawnInterval * 2);
-    //    occupiedPositions.Clear();
-    //    foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Obstacle"))
-    //    {
-    //        Vector3 pos = new Vector3(obj.transform.position.x, 0.1f, obj.transform.position.z);
-    //        occupiedPositions.Add(pos);
-    //    }
-    //}
 }
