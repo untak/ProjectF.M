@@ -1173,6 +1173,7 @@ MonoBehaviour:
   truckPrefabs:
   - {fileID: 6152719497548875147, guid: 7a4e741a473bf9b40a15a3711423a24d, type: 3}
   - {fileID: 8154172562329322626, guid: 6d36fd7aafa550646af1f2b2606e5eeb, type: 3}
+  - {fileID: 8154172562329322626, guid: 4631ac9d1be33ee49870b8b5b030438a, type: 3}
   motorcyclePrefabs:
   - {fileID: 5956314656033197463, guid: 63a96a2fe1343834b838d10901cc6e92, type: 3}
   - {fileID: 6935961653575215688, guid: 4dc250b53be268f4e86482a652fea7e5, type: 3}
