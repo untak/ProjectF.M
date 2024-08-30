@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8022617614675405705}
   - component: {fileID: 7419702181515111418}
   - component: {fileID: 3744902712335331163}
+  - component: {fileID: 391570254210309955}
   m_Layer: 0
   m_Name: Neon_Scooter_Back_Wheel
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &391570254210309955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3611764594727836861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cfa646bafe58e4c9f7205b3115198d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spinSpeed: 1000
 --- !u!1 &3816967266171403231
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +191,7 @@ GameObject:
   - component: {fileID: 8719234817520958393}
   - component: {fileID: 3910093316060490867}
   - component: {fileID: 5874052339876725689}
+  - component: {fileID: 4554677895845041398}
   m_Layer: 0
   m_Name: Neon_Scooter_Front_Wheel
   m_TagString: Untagged
@@ -249,6 +264,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4554677895845041398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533395471528238155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cfa646bafe58e4c9f7205b3115198d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spinSpeed: 1000
 --- !u!1 &5956314656033197463
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +313,7 @@ Transform:
   - {fileID: 8719234817520958393}
   - {fileID: 6289958253094651906}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &9075275485076076686
 BoxCollider:

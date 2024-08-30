@@ -74,7 +74,7 @@ PlayerSettings:
   androidDefaultWindowHeight: 1280
   androidMinimumWindowWidth: 720
   androidMinimumWindowHeight: 1280
-  androidFullscreenMode: 3
+  androidFullscreenMode: 1
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 0
