@@ -25,6 +25,7 @@ public class CollisionHandler : MonoBehaviour
     public AudioClip obstacleHitSound; // 장애물 충돌 사운드
 
     private AudioSource audioSource;
+    private Coroutine shieldCoroutine; // 쉴드 코루틴을 저장할 변수
 
     void Start()
     {
@@ -52,7 +53,7 @@ public class CollisionHandler : MonoBehaviour
                     audioSource.PlayOneShot(obstacleHitSound); // 장애물 충돌 소리 재생
                     gameOverManager.GameOver();
                 }
-                
+
             }
             else if (shieldOn)
             {
@@ -60,7 +61,7 @@ public class CollisionHandler : MonoBehaviour
                 {
                     scoreManager.GetScore(100);
                     HandleShieldCollisionWithObstacle(collision.gameObject);
-                    StopCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration));
+                    StopCoroutine(shieldCoroutine); // 현재 실행 중인 쉴드 코루틴 중지
                     shieldItem.SetActive(false);
                     shieldOn = false;
                     audioSource.Stop();
@@ -70,7 +71,7 @@ public class CollisionHandler : MonoBehaviour
                     audioSource.PlayOneShot(obstacleHitSound); // 장애물 충돌 소리 재생
                     gameOverManager.GameOver();
                 }
-                
+
             }
             else
             {
@@ -119,12 +120,19 @@ public class CollisionHandler : MonoBehaviour
         shieldItem.SetActive(true);
         Destroy(shield);
 
+        // 기존 쉴드 코루틴이 실행 중이면 중지
+        if (shieldCoroutine != null)
+        {
+            StopCoroutine(shieldCoroutine);
+        }
+
+        // 새로운 쉴드 코루틴 시작
+        shieldCoroutine = StartCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration));
+
         // 실드 사운드 재생
         audioSource.clip = shieldActiveSound;
         audioSource.loop = true;
         audioSource.Play();
-
-        StartCoroutine(DeactivateItemAfterTime(shieldItem, shieldDuration));
     }
 
     void HandleShieldCollisionWithObstacle(GameObject obstacle)
