@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.034396444, g: 0.008413719, b: 0.05280065, a: 1}
+  m_IndirectSpecularColor: {r: 0.034439843, g: 0.008384505, b: 0.052808877, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1862,6 +1862,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4290072673
       objectReference: {fileID: 0}
+    - target: {fileID: 5973463444588852803, guid: 204dc8315063ca946af7a28db1cd6425,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5973829460202038744, guid: 204dc8315063ca946af7a28db1cd6425,
         type: 3}
       propertyPath: m_fontSize
@@ -3129,96 +3134,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807485727}
     m_Modifications:
-    - target: {fileID: 922153642244410256, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2995717476590464279, guid: 3e7621d5fa98e64469439856587419ce,
         type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1296327160}
-    - target: {fileID: 3108211430980000645, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108211430980000645, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108211430980000645, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108211430980000645, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -102.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108211430980000645, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -31.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108211430980000645, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230368193554118995, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230368193554118995, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5230368193554118995, guid: 3e7621d5fa98e64469439856587419ce,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1296327162}
-    - target: {fileID: 5230368193554118995, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230368193554118995, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230368193554118995, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GamePauseController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230368193554118995, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318011998453932009, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318011998453932009, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318011998453932009, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
     - target: {fileID: 5918571101324031154, guid: 3e7621d5fa98e64469439856587419ce,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3328,11 +3253,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HomeUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722966492142839501, guid: 3e7621d5fa98e64469439856587419ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
